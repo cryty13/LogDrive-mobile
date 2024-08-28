@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { AuthContext } from '../context/AuthContext';
 import LoginScreen from '../screens/Login/LoginScreen';
 import BottomTabNavigator from './BottomTabNavigator';
+import RegisterScreen from '../screens/Login/RegisterScreen';
 
 const Stack = createStackNavigator();
 
@@ -26,7 +27,10 @@ const AppNavigator: React.FC = () => {
           options={{ headerShown: false }} 
         />
         ) : (
+          <>
           <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="Register" component={RegisterScreen} />
+          </>
         )}
       </Stack.Navigator>
     </NavigationContainer>

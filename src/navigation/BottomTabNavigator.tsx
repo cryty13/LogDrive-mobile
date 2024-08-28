@@ -2,10 +2,10 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 import HomeScreen from '../screens/Home/HomeScreen';
-import Screen1 from '../screens/teste/Screen1';
 import Screen2 from '../screens/teste/Screen2';
 import Screen3 from '../screens/teste/Screen3';
 import Screen4 from '../screens/teste/Screen4';
+import HistoryScreen from '../screens/History/History';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,7 +20,7 @@ const BottomTabNavigator: React.FC = () => {
             case 'Home':
               iconName = 'home-outline';
               break;
-            case 'Screen1':
+            case 'Historico':
               iconName = 'list-outline';
               break;
             case 'Screen2':
@@ -42,7 +42,7 @@ const BottomTabNavigator: React.FC = () => {
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Screen1" component={Screen1} />
+      <Tab.Screen name="Historico" component={HistoryScreen} />
       <Tab.Screen name="Screen2" component={Screen2} />
       <Tab.Screen name="Screen3" component={Screen3} />
       <Tab.Screen name="Screen4" component={Screen4} />

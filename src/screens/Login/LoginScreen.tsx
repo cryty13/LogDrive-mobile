@@ -1,11 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image } from 'react-native';
 import { AuthContext } from '../../context/AuthContext';
+import { useNavigation } from '@react-navigation/native';
+
 
 const LoginScreen: React.FC = () => {
   const authContext = useContext(AuthContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigation = useNavigation();
 
   if (!authContext) {
     return null;
@@ -38,6 +41,8 @@ const LoginScreen: React.FC = () => {
         secureTextEntry
       />
       <Button title="Entrar" onPress={handleLogin} />
+      <Text style={{ textAlign: 'center', marginVertical: 16 }}>ou</Text>
+      <Button title="Register" onPress={() => navigation.navigate('Register' as never)} />
     </View>
   );
 };
